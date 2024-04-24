@@ -28,23 +28,23 @@
   </p>
 </main>
 
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    transition: filter 300ms;
-    will-change: filter;
-  }
+<style lang="postcss">
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
+  will-change: filter;
 
-  .logo:hover {
+  &:hover {
     filter: drop-shadow(0 0 2em #646cffaa);
   }
 
-  .logo.svelte:hover {
+  &.svelte:hover {
     filter: drop-shadow(0 0 2em #ff3e00aa);
   }
+}
 
-  .read-the-docs {
-    color: #888;
-  }
+.read-the-docs {
+  color: #888;
+}
 </style>
