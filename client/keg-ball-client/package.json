@@ -7,15 +7,23 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.7.2",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tsconfig/svelte": "^5.0.2",
+    "eslint": "^9.1.1",
+    "eslint-plugin-svelte": "^2.38.0",
+    "globals": "^15.0.0",
     "svelte": "5.0.0-next.113",
     "svelte-check": "^3.6.7",
+    "svelte-eslint-parser": "^0.35.0",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
+    "typescript-eslint": "^7.7.1",
     "vite": "^5.2.0"
   }
 }
