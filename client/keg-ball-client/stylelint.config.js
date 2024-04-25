@@ -1,13 +1,17 @@
 /** @type {import('stylelint').Config} */
 export default {
-  extends: ['stylelint-config-standard', 'stylelint-config-html', 'stylelint-config-html/svelte'],
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-html',
+  ],
+  files: ['**/*.css', '**/*.svelte'],
   plugins: ['stylelint-order', '@stylistic/stylelint-plugin'],
   rules: {
     'order/order': ['custom-properties', 'declarations'],
     'order/properties-order': ['width', 'height'],
     'order/properties-alphabetical-order': [true],
     'alpha-value-notation': 'number',
-    '@stylistic/indentation': 2,
+    '@stylistic/indentation': [2, { baseIndentLevel: 1 }],
     '@stylistic/color-hex-case': 'lower',
     '@stylistic/string-quotes': 'single',
     '@stylistic/unit-case': 'lower',
@@ -21,10 +25,12 @@ export default {
     '@stylistic/no-eol-whitespace': true,
     '@stylistic/no-extra-semicolons': true,
     '@stylistic/no-missing-end-of-source-newline': true,
+    '@stylistic/declaration-colon-space-before': 'never',
+    '@stylistic/declaration-colon-space-after': 'always',
   },
   overrides: [
     {
-      files: ['*.svelte'],
+      files: ['**/*.svelte'],
       customSyntax: 'postcss-html',
     },
   ],

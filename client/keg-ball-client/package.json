@@ -11,7 +11,7 @@
     "lint": "concurrently -c auto 'pnpm:lint:*(!fix)'",
     "lint:fix": "concurrently -c auto 'pnpm:lint:*(!fix) --fix'",
     "lint:eslint": "eslint \"**/*.{js,ts,svelte}\"",
-    "lint:stylelint": "stylelint \"**/*.{css,svelte}\""
+    "lint:stylelint": "stylelint \"**/*.{css,postcss,svelte}\""
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.2",
