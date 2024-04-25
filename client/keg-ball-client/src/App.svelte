@@ -1,15 +1,19 @@
 <script lang='ts'>
   import SiteContent from './lib/SiteContent.svelte'
   import SiteHeader from './lib/SiteHeader.svelte'
+  import SiteLoader from './lib/SiteLoader.svelte'
 </script>
 
-<div class='app'>
-  <SiteHeader />
-  <SiteContent />
+<div>
+  <div class='layout'>
+    <SiteHeader />
+    <SiteContent />
+  </div>
+  <SiteLoader loading={false} />
 </div>
 
 <style lang='postcss'>
-  .app {
+  .layout {
     background-color: var(--color-main-background);
     color: var(--color-main-foreground);
     display: grid;

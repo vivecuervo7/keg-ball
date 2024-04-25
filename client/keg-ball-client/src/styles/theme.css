@@ -4,4 +4,6 @@
   --color-main-background: light-dark(#f8f8f8, #18181b);
   --color-main-foreground: light-dark(#18181b, #f8f8f8);
   --color-keyline: light-dark(#e0e0e0, #252b44);
+  --color-loading-spinner-inactive: light-dark(#439cf0, #2c6aa4);
+  --color-loading-spinner-active: light-dark(#082c50, #439cf0);
 }
