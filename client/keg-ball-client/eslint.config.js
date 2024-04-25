@@ -37,7 +37,6 @@ export default [
       'svelte/block-lang': ['error', { script: 'ts', style: 'postcss' }],
       'svelte/indent': 'error',
       'svelte/html-quotes': ['warn', { prefer: 'single' }],
-      'svelte/html-self-closing': ['error', 'html'],
       'svelte/html-closing-bracket-spacing': 'error',
       'svelte/mustache-spacing': 'error',
       'svelte/no-spaces-around-equal-signs-in-attribute': 'error',
