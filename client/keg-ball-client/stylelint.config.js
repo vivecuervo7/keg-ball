@@ -9,7 +9,6 @@ export default {
   rules: {
     'order/order': ['custom-properties', 'declarations'],
     'order/properties-order': ['width', 'height'],
-    'order/properties-alphabetical-order': [true],
     'alpha-value-notation': 'number',
     '@stylistic/indentation': [2, { baseIndentLevel: 1 }],
     '@stylistic/color-hex-case': 'lower',
