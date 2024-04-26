@@ -8,15 +8,8 @@ import hash from 'object-hash'
  */
 export const useStoreContext = <T>(init: () => T | T, key?: string) => {
   key ??= hash(init)
-
-  const existingContext = getContext<T>(key)
-
-  if (existingContext) {
-    console.debug('Using existing context for key:', key)
-    return existingContext
-  }
-
-  return createStoreContext(init, key)
+  const store = getContext<T>(key)
+  return store ?? createStoreContext(init, key)
 }
 
 /**
@@ -26,7 +19,6 @@ export const useStoreContext = <T>(init: () => T | T, key?: string) => {
  */
 export const createStoreContext = <T>(init: () => T | T, key?: string) => {
   key ??= hash(init)
-
-  console.debug('Creating new context scope for key:', key)
-  return setContext(key, init())
+  const store = init()
+  return setContext(key, store)
 }
