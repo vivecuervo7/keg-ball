@@ -16,11 +16,12 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser,
+        ...globals.node,
       },
     },
     rules: {
       'no-alert': 'warn',
-      'no-console': 'warn',
+      'no-console': ['warn', { allow: ['debug', 'warn', 'error'] }],
       'no-debugger': 'warn',
     },
   },
