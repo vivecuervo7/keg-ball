@@ -1,14 +1,9 @@
 <script lang='ts'>
-  import { authentication } from 'src/stores/authentication.svelte'
   import SiteBranding from './SiteBranding.svelte'
-  import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
-
-  const auth = useStoreContext(authentication)
 </script>
 
 <header>
   <SiteBranding />
-  <span>{auth.user?.username}</span>
 </header>
 
 <style lang='postcss'>

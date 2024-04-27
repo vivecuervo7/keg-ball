@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/tilt-warp':
-        specifier: ^5.0.5
-        version: 5.0.5
+      '@fontsource-variable/red-hat-display':
+        specifier: ^5.0.21
+        version: 5.0.21
       '@fontsource/bakbak-one':
         specifier: ^5.0.20
         version: 5.0.20
@@ -66,6 +66,9 @@ importers:
       postcss-import:
         specifier: ^16.1.0
         version: 16.1.0(postcss@8.4.38)
+      postcss-mixins:
+        specifier: ^10.0.1
+        version: 10.0.1(postcss@8.4.38)
       postcss-nested:
         specifier: ^6.0.1
         version: 6.0.1(postcss@8.4.38)
@@ -90,6 +93,9 @@ importers:
       svelte-eslint-parser:
         specifier: ^0.35.0
         version: 0.35.0(svelte@5.0.0-next.113)
+      svelte-routing:
+        specifier: ^2.12.0
+        version: 2.12.0
       tslib:
         specifier: ^2.6.2
         version: 2.6.2
@@ -345,8 +351,8 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@fontsource-variable/tilt-warp@5.0.5':
-    resolution: {integrity: sha512-KEoHqPC/e/RrcLjFh3HmUvPsmTeH326v5dfyRlBj2Fi74RKyN9a4ziXls8ypXXtUehVvH77gkGVQN7xdgTMGEA==}
+  '@fontsource-variable/red-hat-display@5.0.21':
+    resolution: {integrity: sha512-0wWiihN9oAmTDqnXg9YIN9TyHlklkv4Kzo2qWApItqALWtqZjaYYszQX2Qp86rTDv03KVacphoZnBcJJmDmFzQ==}
 
   '@fontsource/bakbak-one@5.0.20':
     resolution: {integrity: sha512-sWupwEkr1R1qxz9kR1j4zzyvwOkgGRH8EAES582I6m0AP9CsM7IeoWZWaDSHv4kg1dyKs4UnV5YIOqc9YeCzyQ==}
@@ -758,6 +764,10 @@ packages:
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+
+  camelcase-css@2.0.1:
+    resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
+    engines: {node: '>= 6'}
 
   caniuse-lite@1.0.30001612:
     resolution: {integrity: sha512-lFgnZ07UhaCcsSZgWW0K5j4e69dK1u/ltrL9lTUiFOwNHs12S3UMIEYgBV0Z6C6hRDev7iRnMzzYmKabYdXF9g==}
@@ -1373,6 +1383,12 @@ packages:
     peerDependencies:
       postcss: ^8.0.0
 
+  postcss-js@4.0.1:
+    resolution: {integrity: sha512-dDLF8pEO191hJMtlHFPRa8xsizHaM82MLfNkUHdUtVEV3tgTp5oj+8qbEqYM57SLfc74KSbw//4SeJma2LRVIw==}
+    engines: {node: ^12 || ^14 || >= 16}
+    peerDependencies:
+      postcss: ^8.4.21
+
   postcss-load-config@3.1.4:
     resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
     engines: {node: '>= 10'}
@@ -1384,6 +1400,12 @@ packages:
         optional: true
       ts-node:
         optional: true
+
+  postcss-mixins@10.0.1:
+    resolution: {integrity: sha512-5+cI9r8L5ChegVsLM9pXa53Ft03Mt9xAq+kvzqfrUHGPCArVGOfUvmQK2CLP3XWWP2dqxDLQI+lIcXG+GTqOBQ==}
+    engines: {node: ^18.0 || >= 20.0}
+    peerDependencies:
+      postcss: ^8.2.14
 
   postcss-nested@6.0.1:
     resolution: {integrity: sha512-mEp4xPMi5bSWiMbsgoPfcP74lsWLHkQbZc3sY+jWYd65CUwXrUaTp0fmNpa01ZcETKlIgUdFN/MpS2xZtqL9dQ==}
@@ -1415,6 +1437,12 @@ packages:
   postcss-selector-parser@6.0.16:
     resolution: {integrity: sha512-A0RVJrX+IUkVZbW3ClroRWurercFhieevHB38sr2+l9eUClMqome3LmEmnhlNy+5Mr2EYN6B2Kaw9wYdd+VHiw==}
     engines: {node: '>=4'}
+
+  postcss-simple-vars@7.0.1:
+    resolution: {integrity: sha512-5GLLXaS8qmzHMOjVxqkk1TZPf1jMqesiI7qLhnlyERalG0sMbHIbJqrcnrpmZdKCLglHnRHoEBB61RtGTsj++A==}
+    engines: {node: '>=14.0'}
+    peerDependencies:
+      postcss: ^8.2.1
 
   postcss-sorting@8.0.2:
     resolution: {integrity: sha512-M9dkSrmU00t/jK7rF6BZSZauA5MAaBW4i5EnJXspMwt4iqTh/L9j6fgMnbElEOfyRyfLfVbIHj/R52zHzAPe1Q==}
@@ -1673,6 +1701,9 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  svelte-routing@2.12.0:
+    resolution: {integrity: sha512-6i4Mncy4P2b7gD7+BOT9JzQvrfGfGXqFra8VXYU5//bpn6AzJ0PLEhH1E/KwY2AxleOiS/8Nm37MGuic2kn15A==}
 
   svelte@5.0.0-next.113:
     resolution: {integrity: sha512-fr/lQyUOF0Xa3yyd2Ve7EswnlkoOQCgAcFfG5kH+IIBP1943+8zPI9boyrZqc8iowk5pPzjEH6MO0ySNHqIX2Q==}
@@ -2026,7 +2057,7 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
-  '@fontsource-variable/tilt-warp@5.0.5': {}
+  '@fontsource-variable/red-hat-display@5.0.21': {}
 
   '@fontsource/bakbak-one@5.0.20': {}
 
@@ -2493,6 +2524,8 @@ snapshots:
   buffer-crc32@0.2.13: {}
 
   callsites@3.1.0: {}
+
+  camelcase-css@2.0.1: {}
 
   caniuse-lite@1.0.30001612: {}
 
@@ -3120,12 +3153,25 @@ snapshots:
       read-cache: 1.0.0
       resolve: 1.22.8
 
+  postcss-js@4.0.1(postcss@8.4.38):
+    dependencies:
+      camelcase-css: 2.0.1
+      postcss: 8.4.38
+
   postcss-load-config@3.1.4(postcss@8.4.38):
     dependencies:
       lilconfig: 2.1.0
       yaml: 1.10.2
     optionalDependencies:
       postcss: 8.4.38
+
+  postcss-mixins@10.0.1(postcss@8.4.38):
+    dependencies:
+      fast-glob: 3.3.2
+      postcss: 8.4.38
+      postcss-js: 4.0.1(postcss@8.4.38)
+      postcss-simple-vars: 7.0.1(postcss@8.4.38)
+      sugarss: 4.0.1(postcss@8.4.38)
 
   postcss-nested@6.0.1(postcss@8.4.38):
     dependencies:
@@ -3150,6 +3196,10 @@ snapshots:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
+
+  postcss-simple-vars@7.0.1(postcss@8.4.38):
+    dependencies:
+      postcss: 8.4.38
 
   postcss-sorting@8.0.2(postcss@8.4.38):
     dependencies:
@@ -3367,7 +3417,6 @@ snapshots:
   sugarss@4.0.1(postcss@8.4.38):
     dependencies:
       postcss: 8.4.38
-    optional: true
 
   supports-color@5.5.0:
     dependencies:
@@ -3437,6 +3486,8 @@ snapshots:
       postcss-load-config: 3.1.4(postcss@8.4.38)
       sugarss: 4.0.1(postcss@8.4.38)
       typescript: 5.4.5
+
+  svelte-routing@2.12.0: {}
 
   svelte@5.0.0-next.113:
     dependencies:

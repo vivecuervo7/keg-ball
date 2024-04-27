@@ -2,11 +2,14 @@
   --color-primary: light-dark(#082c50, #ddefff);
   --color-secondary: light-dark(#439cf0, #2c6aa4);
   --color-main-background: light-dark(#f8f8f8, #18181b);
-  --color-main-foreground: light-dark(#18181b, #f8f8f8);
+  --color-main-foreground: light-dark(#262626, #e6e6e6);
   --color-keyline: light-dark(#dedee4, #2d303d);
   --color-loading-spinner-inactive: light-dark(#439cf0, #2c6aa4);
-  --color-loading-spinner-active: light-dark(#082c50, #439cf0);
+  --color-loading-spinner-active: light-dark(#2c6aa4, #439cf0);
   --color-button-border: var(--color-keyline);
-  --color-button-background: var(--color-main-background);
-  --color-button-background-hover: var(--color-keyline);
+  --color-button-background: var(--color-keyline);
+  --color-button-background-hover: light-dark(#d0d0d8, #343646);
+  --color-nav-link: var(--color-main-foreground);
+  --color-nav-link-active: light-dark(var(--color-secondary), #439cf0);
+  --color-nav-link-hover: #71bafe;
 }

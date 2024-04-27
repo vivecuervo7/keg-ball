@@ -1,9 +1,7 @@
 <script lang='ts'>
-  import logoLight from 'src/assets/logo.svg'
-  import logoDark from 'src/assets/logo-dark.svg'
   import { useDarkLightModeImage } from 'src/hooks/useDarkLightModeImage.svelte'
 
-  const logo = useDarkLightModeImage(logoDark, logoLight)
+  const logo = useDarkLightModeImage('src/assets/logo-dark.svg', 'src/assets/logo.svg')
 </script>
 
 <a href='/'>
@@ -37,30 +35,30 @@
   }
 
   span {
+    @mixin heavy-font;
+
     letter-spacing: 0.2rem;
   }
 
   span:first-of-type {
     display: block;
     color: var(--color-primary);
-    font-family: 'Tilt Warp Variable', system-ui, sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
-    line-height: 1.2em;
+    line-height: 1em;
 
     @media (--medium-viewport) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     @media (--small-viewport) {
-      font-size: 2rem;
+      font-size: 2.5rem;
       line-height: 1em;
     }
   }
 
   span:last-of-type {
     color: var(--color-secondary);
-    font-family: 'Bakbak One', system-ui, sans-serif;
     font-size: 2.25rem;
     font-weight: 500;
 

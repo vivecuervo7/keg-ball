@@ -10,6 +10,7 @@ export default {
     'order/order': ['custom-properties', 'declarations'],
     'order/properties-order': ['width', 'height'],
     'alpha-value-notation': 'number',
+    'at-rule-no-unknown': [true, { ignoreAtRules: ['define-mixin', 'mixin'] }],
     '@stylistic/indentation': [2, { baseIndentLevel: 1 }],
     '@stylistic/color-hex-case': 'lower',
     '@stylistic/string-quotes': 'single',

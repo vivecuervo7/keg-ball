@@ -17,13 +17,13 @@
   .overlay {
     position: fixed;
     inset: 0;
-    background-color: rgb(255 255 255 / 0.5);
+    background-color: rgb(255 255 255 / 0.85);
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s 0s, opacity 0.3s;
 
     @media (--dark-mode) {
-      background-color: rgb(0 0 0 / 0.5);
+      background-color: rgb(30 30 30 / 0.85);
     }
 
     &.loading {
