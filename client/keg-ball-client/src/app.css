@@ -1,7 +1,7 @@
-@import url('styles/normalize.css');
-@import url('styles/reset.css');
-@import url('styles/typography.css');
-@import url('styles/theme.css');
+@import 'styles/normalize.css';
+@import 'styles/reset.css';
+@import 'styles/typography.css';
+@import 'styles/theme.css';
 
 :root {
   color-scheme: light dark;

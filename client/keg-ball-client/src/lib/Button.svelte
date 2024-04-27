@@ -1,15 +1,32 @@
 <script lang='ts'>
-  import type { Snippet } from 'svelte'
+  import { Link } from 'svelte-routing'
 
-  let { children, onclick }: { children: Snippet, onclick: () => void } = $props()
+  interface ButtonProps {
+    onclick: () => void
+  }
+
+  interface LinkProps {
+    onclick?: undefined
+    to: string
+  }
+
+  let { ...props }: PropsWithChildren<ButtonProps | LinkProps> = $props()
 </script>
 
-<button {onclick}>
-  {@render children()}
-</button>
+{#if props.onclick}
+  <button onclick={props.onclick}>
+    {@render props.children()}
+  </button>
+{:else}
+  <Link to={props.to}>
+    <div>
+      {@render props.children()}
+    </div>
+  </Link>
+{/if}
 
 <style lang='postcss'>
-  button {
+  button, div {
     @mixin button;
   }
 </style>

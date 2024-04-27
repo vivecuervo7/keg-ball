@@ -1,13 +1,11 @@
 <script lang='ts'>
   import { Link } from 'svelte-routing'
-  import type { Snippet } from 'svelte'
 
   interface Props {
     to: string
-    children: Snippet
   }
 
-  const { to, children }: Props = $props()
+  const { to, children }: PropsWithChildren<Props> = $props()
 </script>
 
 <Link {to} let:active>
@@ -19,10 +17,9 @@
 <style lang='postcss'>
   span {
     @mixin heavy-font;
-
+    transition: color 0.15s;
     color: var(--color-nav-link);
     font-size: 1.5rem;
-    transition: color 0.15s;
 
     &.active {
       color: var(--color-nav-link-active);

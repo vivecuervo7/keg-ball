@@ -1,12 +1,16 @@
 <script lang='ts'>
   import Square from 'src/lib/icons/Square.svelte'
 
-  let { loading = true }: { loading: boolean } = $props()
+  interface Props {
+    loading?: boolean
+  }
+
+  let { loading = true }: Props = $props()
 </script>
 
-<div class={`overlay ${loading ? 'loading' : ''}`}>
+<div class='overlay' class:loading>
   <div class='spinner'>
-    <Square className='square top-left' />
+    <Square className='square' />
     <Square className='square top-right' />
     <Square className='square bottom-left' />
     <Square className='square bottom-right' />
@@ -17,10 +21,10 @@
   .overlay {
     position: fixed;
     inset: 0;
-    background-color: rgb(255 255 255 / 0.85);
+    transition: visibility 0.3s 0s, opacity 0.3s;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.3s 0s, opacity 0.3s;
+    background-color: rgb(255 255 255 / 0.85);
 
     @media (--dark-mode) {
       background-color: rgb(30 30 30 / 0.85);
@@ -30,34 +34,30 @@
       visibility: visible;
       opacity: 1;
     }
+  }
 
-    .spinner {
-      display: grid;
-      grid-template-columns: repeat(2, clamp(30px,8vw, 50px));
-      place-content: center;
-      position: fixed;
-      inset: 0;
-    }
+  .spinner {
+    display: grid;
+    position: fixed;
+    inset: 0;
+    grid-template-columns: repeat(2, clamp(30px,8vw, 50px));
+    place-content: center;
 
-    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
     :global(.square) {
       width: 100%;
       height: auto;
-      color: var(--color-loading-spinner-inactive);
       animation: ease-in 2s infinite activate-square;
+      color: var(--color-loading-spinner-inactive);
     }
 
-    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
     :global(.top-right) {
       animation-delay: 0.5s;
     }
 
-    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
     :global(.bottom-right) {
       animation-delay: 1s;
     }
 
-    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
     :global(.bottom-left) {
       animation-delay: 1.5s;
     }

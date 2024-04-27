@@ -17,6 +17,8 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
+        PropsWithChildren: false,
+        PropsWithOptionalChildren: false,
       },
     },
     rules: {

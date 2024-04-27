@@ -1,38 +1,34 @@
 <script lang='ts'>
-  import { authentication } from './stores/authentication.svelte'
-  import { useStoreContext } from './hooks/useStoreContext.svelte'
-  import SiteContent from './lib/SiteContent.svelte'
-  import SiteHeader from './lib/SiteHeader.svelte'
-  import SiteLoader from './lib/SiteLoader.svelte'
-  import Routes from './lib/Routes.svelte'
-  import SiteNavigation from './lib/SiteNavigation.svelte'
+  import Routes from 'src/lib/Routes.svelte'
+  import SiteContent from 'src/lib/layout/SiteContent.svelte'
+  import SiteHeader from 'src/lib/layout/SiteHeader.svelte'
+  import SiteLoader from 'src/lib/layout/SiteLoader.svelte'
+  import SiteNavigation from 'src/lib/layout/SiteNavigation.svelte'
   import { Router } from 'svelte-routing'
-  import SiteFooter from './lib/SiteFooter.svelte'
+  import { useStoreContext } from './hooks/useStoreContext.svelte'
+  import { authentication } from './stores/authentication.svelte'
 
   const auth = useStoreContext(authentication)
 </script>
 
 <div>
-  <div class='layout'>
-    <SiteHeader />
-    <SiteContent>
-      <Router>
-        <SiteNavigation />
-        <Routes />
-      </Router>
-    </SiteContent>
-    <!-- <SiteFooter /> -->
-  </div>
-  <SiteLoader loading={auth.state === 'initial' || auth.state === 'signingIn' || auth.state === 'signingOut'} />
+  <SiteHeader />
+  <SiteContent>
+    <Router>
+      <SiteNavigation />
+      <Routes />
+    </Router>
+  </SiteContent>
 </div>
+<SiteLoader loading={auth.state === 'initial' || auth.state === 'signingIn' || auth.state === 'signingOut'} />
 
 <style lang='postcss'>
-  .layout {
-    background-color: var(--color-main-background);
-    color: var(--color-main-foreground);
+  div {
     display: grid;
     grid-template-rows: auto 1fr;
+    background-color: var(--color-main-background);
     height: 100dvh;
     overflow: hidden;
+    color: var(--color-main-foreground);
   }
 </style>

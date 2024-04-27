@@ -3,6 +3,7 @@ export default {
   extends: [
     'stylelint-config-standard',
     'stylelint-config-html',
+    'stylelint-config-concentric-order',
   ],
   files: ['**/*.css', '**/*.svelte'],
   plugins: ['stylelint-order', '@stylistic/stylelint-plugin'],
@@ -22,10 +23,12 @@ export default {
         }], {
         unspecified: 'bottom',
       }],
+    'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['global'] }],
     'alpha-value-notation': 'number',
     'at-rule-no-unknown': [true, { ignoreAtRules: ['define-mixin', 'mixin'] }],
     'declaration-empty-line-before': 'never',
     'import-notation': 'string',
+    'comment-empty-line-before': null,
     '@stylistic/indentation': [2, { baseIndentLevel: 1 }],
     '@stylistic/color-hex-case': 'lower',
     '@stylistic/string-quotes': 'single',

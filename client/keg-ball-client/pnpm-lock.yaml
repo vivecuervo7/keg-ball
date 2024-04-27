@@ -75,6 +75,9 @@ importers:
       stylelint:
         specifier: ^16.4.0
         version: 16.4.0(typescript@5.4.5)
+      stylelint-config-concentric-order:
+        specifier: ^5.2.0
+        version: 5.2.0(stylelint@16.4.0(typescript@5.4.5))
       stylelint-config-html:
         specifier: ^1.1.0
         version: 1.1.0(postcss-html@1.6.0)(stylelint@16.4.0(typescript@5.4.5))
@@ -1588,6 +1591,9 @@ packages:
 
   style-search@0.1.0:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
+
+  stylelint-config-concentric-order@5.2.0:
+    resolution: {integrity: sha512-vxHxMNoMIk+sJyW+KRj0Nr8fmTqvS+JK+yftLDElOMoQqdCaDT4vSYP4iTGCmJ2O7KKfFHceQ2NtbfUhoKh9Fw==}
 
   stylelint-config-html@1.1.0:
     resolution: {integrity: sha512-IZv4IVESjKLumUGi+HWeb7skgO6/g4VMuAYrJdlqQFndgbj6WJAXPhaysvBiXefX79upBdQVumgYcdd17gCpjQ==}
@@ -3348,6 +3354,12 @@ snapshots:
   strip-json-comments@3.1.1: {}
 
   style-search@0.1.0: {}
+
+  stylelint-config-concentric-order@5.2.0(stylelint@16.4.0(typescript@5.4.5)):
+    dependencies:
+      stylelint-order: 6.0.4(stylelint@16.4.0(typescript@5.4.5))
+    transitivePeerDependencies:
+      - stylelint
 
   stylelint-config-html@1.1.0(postcss-html@1.6.0)(stylelint@16.4.0(typescript@5.4.5)):
     dependencies:

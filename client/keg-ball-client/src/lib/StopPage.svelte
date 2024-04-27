@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import Page from 'src/lib/Page.svelte'
-  import LinkButton from './LinkButton.svelte'
+  import Button from 'src/lib/Button.svelte'
+  import Page from 'src/lib/page/Page.svelte'
 
   interface Props {
     code: string
@@ -20,23 +20,23 @@
         <span>{title}</span>
       </div>
       <span>{message}</span>
-      <LinkButton to='/'>Go home</LinkButton>
+      <Button to='/'>Go home</Button>
     </div>
   </div>
 </Page>
 
 <style lang='postcss'>
   .layout {
-    margin: auto;
-    max-width: min(75%, 700px);
     display: grid;
     grid-template-columns: 2fr 3fr;
-    place-content: center;
     gap: 4rem;
+    place-content: center;
+    margin: auto;
+    max-width: min(75%, 700px);
 
     @media (--small-viewport) {
-      grid-template-columns: 1fr;
       grid-template-rows: minmax(auto, 200px) 1fr;
+      grid-template-columns: 1fr;
       gap: 1rem;
       text-align: center;
     }
@@ -45,9 +45,9 @@
   .text {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     align-items: stretch;
     justify-content: center;
-    gap: 1rem;
     letter-spacing: 0.01.em;
 
     @media (--small-viewport) {
@@ -75,8 +75,8 @@
       }
 
       span:last-of-type {
-        font-weight: 500;
         font-size: 2.5em;
+        font-weight: 500;
 
         @media (--medium-viewport) {
           font-size: 2em;

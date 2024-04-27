@@ -2,10 +2,13 @@
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
   import { authentication } from 'src/stores/authentication.svelte'
   import { Route } from 'svelte-routing'
-  import type { Snippet } from 'svelte'
-  import Unauthorized from './routes/Unauthorized.svelte';
+  import Unauthorized from './routes/Unauthorized.svelte'
 
-  const { path, children }: { path: string, children: Snippet } = $props()
+  interface Props {
+    path: string
+  }
+
+  const { path, children }: PropsWithChildren<Props> = $props()
 
   const auth = useStoreContext(authentication)
 </script>

@@ -5,9 +5,9 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-size: inherit;
   font-weight: inherit;
-  margin: 0;
 }
 
 p {
@@ -15,15 +15,15 @@ p {
 }
 
 a {
-  color: inherit;
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 
 button {
-  background-color: transparent;
   border-width: 0;
-  color: inherit;
+  background-color: transparent;
   cursor: pointer;
   padding: 0;
+  color: inherit;
 }
