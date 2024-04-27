@@ -7,10 +7,25 @@ export default {
   files: ['**/*.css', '**/*.svelte'],
   plugins: ['stylelint-order', '@stylistic/stylelint-plugin'],
   rules: {
-    'order/order': ['custom-properties', 'declarations'],
-    'order/properties-order': ['width', 'height'],
+    'order/order': [
+      ['custom-properties',
+        {
+          type: 'at-rule',
+          name: 'mixin',
+        },
+        'declarations',
+        'at-rules',
+        'rules',
+        {
+          type: 'at-rule',
+          name: 'keyframes',
+        }], {
+        unspecified: 'bottom',
+      }],
     'alpha-value-notation': 'number',
     'at-rule-no-unknown': [true, { ignoreAtRules: ['define-mixin', 'mixin'] }],
+    'declaration-empty-line-before': 'never',
+    'import-notation': 'string',
     '@stylistic/indentation': [2, { baseIndentLevel: 1 }],
     '@stylistic/color-hex-case': 'lower',
     '@stylistic/string-quotes': 'single',
