@@ -19,6 +19,11 @@
       Value
     </NavLink>
   </Link>
+  <Link to='forbidden' let:active>
+    <NavLink {active}>
+      Fobidden
+    </NavLink>
+  </Link>
   <Link to='/not-exist' let:active>
     <NavLink {active}>
       NotFound

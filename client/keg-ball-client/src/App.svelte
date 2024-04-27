@@ -21,7 +21,7 @@
         <Routes />
       </Router>
     </SiteContent>
-    <SiteFooter />
+    <!-- <SiteFooter /> -->
   </div>
   <SiteLoader loading={auth.state === 'initial' || auth.state === 'signingIn' || auth.state === 'signingOut'} />
 </div>

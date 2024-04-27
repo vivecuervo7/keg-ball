@@ -3,6 +3,7 @@
   import Page from './Page.svelte'
   import ProtectedRoute from './ProtectedRoute.svelte'
   import NotFound from './routes/NotFound.svelte'
+  import Forbidden from './routes/Forbidden.svelte';
 </script>
 
 <Route path='/'>
@@ -14,6 +15,9 @@
 <ProtectedRoute path='/protected'>
   <Page>Protected route</Page>
 </ProtectedRoute>
+<Route path='forbidden'>
+  <Forbidden />
+</Route>
 <Route>
   <NotFound />
 </Route>

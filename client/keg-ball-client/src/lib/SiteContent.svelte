@@ -15,7 +15,7 @@
     overflow-y: auto;
     background-image: url('src/assets/background.svg');
     background-repeat: repeat-x;
-    padding: 5rem 1rem 1rem;
+    padding: 4rem 2rem 0.5rem;
     display: flex;
     flex-direction: column;
 
@@ -24,6 +24,7 @@
     }
 
     @media (--small-viewport) {
+      padding: 2.5rem 1rem 0.5rem;
       background-size: 500px;
     }
 

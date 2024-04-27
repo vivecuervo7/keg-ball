@@ -1,9 +1,9 @@
 <script lang='ts'>
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
   import { authentication } from 'src/stores/authentication.svelte'
-  import Page from './Page.svelte'
   import { Route } from 'svelte-routing'
   import type { Snippet } from 'svelte'
+  import Unauthorized from './routes/Unauthorized.svelte';
 
   const { path, children }: { path: string, children: Snippet } = $props()
 
@@ -14,6 +14,6 @@
   {#if auth.state === 'signedIn'}
     {@render children()}
   {:else}
-    <Page>Not authorized</Page>
+    <Unauthorized />
   {/if}
 </Route>

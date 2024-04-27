@@ -10,16 +10,16 @@
   <div class='auth'>
     {#if auth.state === 'signingOut' || auth.state === 'signedIn'}
       <Button onclick={auth.signOut}>Sign out</Button>
-      <span>{auth.state === 'signedIn' ? `Signed in as: ${auth.user?.username}` : 'Not signed in'}</span>
     {:else if auth.state === 'signingIn' || auth.state === 'signedOut'}
       <Button onclick={auth.signInWithGoogle}>Sign in with Google</Button>
     {/if}
+    <span>{auth.state === 'signedIn' ? `Signed in as: ${auth.user?.username}` : 'Not signed in'}</span>
   </div>
 </footer>
 
 <style lang='postcss'>
   footer {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem 0;
     display: flex;
   }
 
