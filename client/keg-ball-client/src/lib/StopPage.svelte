@@ -2,7 +2,13 @@
   import Page from 'src/lib/Page.svelte'
   import LinkButton from './LinkButton.svelte'
 
-  const { code, title, message } = $props()
+  interface Props {
+    code: string
+    title: string
+    message: string
+  }
+
+  const { code, title, message }: Props = $props()
 </script>
 
 <Page>

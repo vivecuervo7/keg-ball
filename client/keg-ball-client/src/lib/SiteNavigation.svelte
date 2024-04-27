@@ -1,5 +1,4 @@
 <script lang='ts'>
-  import { Link } from 'svelte-routing'
   import NavLink from './NavLink.svelte'
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
   import { authentication } from 'src/stores/authentication.svelte'
@@ -9,31 +8,18 @@
 </script>
 
 <nav>
-  <Link to='/' let:active>
-    <NavLink {active}>
-      Home
-    </NavLink>
-  </Link>
-  <Link to='/value/123' let:active>
-    <NavLink {active}>
-      Value
-    </NavLink>
-  </Link>
-  <Link to='forbidden' let:active>
-    <NavLink {active}>
-      Fobidden
-    </NavLink>
-  </Link>
-  <Link to='/not-exist' let:active>
-    <NavLink {active}>
-      NotFound
-    </NavLink>
-  </Link>
+  <NavLink to='/'>Home</NavLink>
+  <NavLink to='unauthorized'>Unauthorized</NavLink>
+  <NavLink to='forbidden'>Forbidden</NavLink>
+  <NavLink to='not-found'>Not Found</NavLink>
   {#if auth.state === 'signedIn'}
-    <Link to='/protected' let:active>
-      <NavLink {active}>
-        Protected
-      </NavLink>
-    </Link>
+    <NavLink to='protected'>Protected (signed in)</NavLink>
   {/if}
 </nav>
+
+<style lang='postcss'>
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

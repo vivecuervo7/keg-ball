@@ -1,12 +1,20 @@
 <script lang='ts'>
+  import { Link } from 'svelte-routing'
   import type { Snippet } from 'svelte'
 
-  const { active, children }: { active: boolean, children: Snippet } = $props()
+  interface Props {
+    to: string
+    children: Snippet
+  }
+
+  const { to, children }: Props = $props()
 </script>
 
-<span class:active>
-  {@render children()}
-</span>
+<Link {to} let:active>
+  <span class:active>
+    {@render children()}
+  </span>
+</Link>
 
 <style lang='postcss'>
   span {
