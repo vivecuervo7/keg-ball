@@ -1,6 +1,4 @@
 <script lang='ts'>
-  import Square from 'src/lib/icons/Square.svelte'
-
   interface Props {
     loading?: boolean
   }
@@ -10,12 +8,23 @@
 
 <div class='overlay' class:loading>
   <div class='spinner'>
-    <Square className='square' />
-    <Square className='square top-right' />
-    <Square className='square bottom-left' />
-    <Square className='square bottom-right' />
+    {@render square('top-left')}
+    {@render square('top-right')}
+    {@render square('bottom-left')}
+    {@render square('bottom-right')}
   </div>
 </div>
+
+{#snippet square(position: 'top-left' | 'top-right' | 'bottom-right' | 'bottom-left')}
+  <svg
+  class='square'
+  class:bottom-left={position === 'bottom-left'}
+  class:bottom-right={position === 'bottom-right'}
+  class:top-right={position === 'top-right'}
+  viewBox='0 0 8 8'>
+    <rect fill='currentColor' height='6.83927' rx='1' width='6.83927' x='0.688965' y='0.403992' />
+  </svg>
+{/snippet}
 
 <style lang='postcss'>
   .overlay {
@@ -42,46 +51,46 @@
     inset: 0;
     grid-template-columns: repeat(2, clamp(30px,8vw, 50px));
     place-content: center;
+  }
 
-    :global(.square) {
-      width: 100%;
-      height: auto;
-      animation: ease-in 2s infinite activate-square;
+  .square {
+    width: 100%;
+    height: auto;
+    animation: ease-in 2s infinite activate-square;
+    color: var(--color-loading-spinner-inactive);
+  }
+
+  .top-right {
+    animation-delay: 0.5s;
+  }
+
+  .bottom-right {
+    animation-delay: 1s;
+  }
+
+  .bottom-left {
+    animation-delay: 1.5s;
+  }
+
+  @keyframes activate-square {
+    0% {
       color: var(--color-loading-spinner-inactive);
     }
 
-    :global(.top-right) {
-      animation-delay: 0.5s;
+    10% {
+      color: var(--color-loading-spinner-active);
     }
 
-    :global(.bottom-right) {
-      animation-delay: 1s;
+    20% {
+      color: var(--color-loading-spinner-active);
     }
 
-    :global(.bottom-left) {
-      animation-delay: 1.5s;
+    30% {
+      color: var(--color-loading-spinner-inactive);
     }
 
-    @keyframes activate-square {
-      0% {
-        color: var(--color-loading-spinner-inactive);
-      }
-
-      10% {
-        color: var(--color-loading-spinner-active);
-      }
-
-      20% {
-        color: var(--color-loading-spinner-active);
-      }
-
-      30% {
-        color: var(--color-loading-spinner-inactive);
-      }
-
-      100% {
-        color: var(--color-loading-spinner-inactive);
-      }
+    100% {
+      color: var(--color-loading-spinner-inactive);
     }
   }
 </style>

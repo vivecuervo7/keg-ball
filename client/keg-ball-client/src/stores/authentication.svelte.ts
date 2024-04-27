@@ -55,6 +55,7 @@ export const authentication = () => {
 
   return {
     get state() { return state },
+    get isLoading() { return state === 'initial' || state === 'signingIn' || state === 'signingOut' },
     get user() { return user },
     signInWithGoogle,
     signOut,
