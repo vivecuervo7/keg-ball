@@ -1,6 +1,6 @@
 /* Breakpoints */
 @custom-media --small-viewport (max-width: 767px);
-@custom-media --medium-viewport (max-width: 1200px) and (min-width: 768px);
+@custom-media --medium-viewport (max-width: 1200px);
 @custom-media --large-viewport (min-width: 1201px);
 
 /* Dark / light mode */

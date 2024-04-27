@@ -25,7 +25,7 @@ export default {
       }],
     'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['global'] }],
     'alpha-value-notation': 'number',
-    'at-rule-no-unknown': [true, { ignoreAtRules: ['define-mixin', 'mixin'] }],
+    'at-rule-no-unknown': [true, { ignoreAtRules: ['define-mixin', 'mixin', 'if'] }],
     'declaration-empty-line-before': 'never',
     'import-notation': 'string',
     'comment-empty-line-before': null,

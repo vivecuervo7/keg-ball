@@ -28,20 +28,16 @@
 
 <style lang='postcss'>
   .overlay {
+    @mixin overlay;
     position: fixed;
     inset: 0;
-    transition: visibility 0.3s 0s, opacity 0.3s;
-    visibility: hidden;
-    opacity: 0;
-    background-color: rgb(255 255 255 / 0.85);
 
     @media (--dark-mode) {
       background-color: rgb(30 30 30 / 0.85);
     }
 
     &.loading {
-      visibility: visible;
-      opacity: 1;
+      @mixin overlay-open;
     }
   }
 

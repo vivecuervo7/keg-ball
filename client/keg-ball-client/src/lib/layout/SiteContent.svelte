@@ -9,6 +9,7 @@
 <style lang='postcss'>
   main {
     display: flex;
+    position: relative;
     flex-direction: column;
     background-image: url('src/assets/background.svg');
     background-repeat: repeat-x;
