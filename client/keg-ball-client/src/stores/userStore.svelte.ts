@@ -1,5 +1,5 @@
 import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
-import { authentication } from './authentication.svelte'
+import { authStore } from './authStore.svelte'
 
 interface Profile {
   id: string
@@ -7,10 +7,10 @@ interface Profile {
   username: string
 }
 
-export const user = () => {
+export const userStore = () => {
   let profile: Profile | null = $state(null)
 
-  const auth = useStoreContext(authentication)
+  const auth = useStoreContext(authStore)
 
   $effect(() => {
     if (auth.user) {
@@ -46,7 +46,9 @@ export const user = () => {
   }
 
   return {
-    get user() { return profile },
+    get profile() { return profile },
+    get username() { return profile?.username || '' },
+    get email() { return profile?.email || '' },
     get setupCompleted() { return !!profile },
   }
 }

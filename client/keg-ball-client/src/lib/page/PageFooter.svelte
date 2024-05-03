@@ -1,9 +1,9 @@
 <script lang='ts'>
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
   import Button from 'src/lib/Button.svelte'
-  import { authentication } from 'src/stores/authentication.svelte'
+  import { authStore } from 'src/stores/authStore.svelte'
 
-  const auth = useStoreContext(authentication)
+  const auth = useStoreContext(authStore)
 
   const showSignOutButton = $derived(auth.state === 'signingOut' || auth.state === 'signedIn')
   const showSignInButton = $derived(auth.state === 'signingIn' || auth.state === 'signedOut')

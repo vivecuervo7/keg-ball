@@ -1,12 +1,12 @@
 <script lang='ts'>
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
   import SiteNavigationLink from 'src/lib/layout/SiteNavigationLink.svelte'
-  import { authentication } from 'src/stores/authentication.svelte'
+  import { authStore } from 'src/stores/authStore.svelte'
   import { useLocation } from 'svelte-routing'
   import CloseIcon from '../icons/CloseIcon.svelte'
   import MenuIcon from '../icons/MenuIcon.svelte'
 
-  const auth = useStoreContext(authentication)
+  const auth = useStoreContext(authStore)
   let open = $state(false)
 
   $effect (() => {
@@ -54,6 +54,7 @@
       transition: transform 0.3s ease-in-out;
       background-color: var(--color-keyline);
       padding: 3rem 3rem 3rem 2rem;
+      min-width: min(400px, 70%);
 
       &.open {
         transform: translateX(0);

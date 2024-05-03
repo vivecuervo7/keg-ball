@@ -1,6 +1,6 @@
 <script lang='ts'>
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
-  import { authentication } from 'src/stores/authentication.svelte'
+  import { authStore } from 'src/stores/authStore.svelte'
   import { Route } from 'svelte-routing'
   import Unauthorized from './routes/Unauthorized.svelte'
 
@@ -10,7 +10,7 @@
 
   const { path, children }: PropsWithChildren<Props> = $props()
 
-  const auth = useStoreContext(authentication)
+  const auth = useStoreContext(authStore)
 </script>
 
 <Route {path}>

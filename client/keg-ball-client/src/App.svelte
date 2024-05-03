@@ -6,11 +6,11 @@
   import SiteNavigation from 'src/lib/layout/SiteNavigation.svelte'
   import { Router } from 'svelte-routing'
   import { createStoreContext, useStoreContext } from './hooks/useStoreContext.svelte'
-  import { authentication } from './stores/authentication.svelte'
-  import { user } from './stores/user.svelte'
+  import { authStore } from './stores/authStore.svelte'
+  import { userStore } from './stores/userStore.svelte'
 
-  createStoreContext(user)
-  const auth = useStoreContext(authentication)
+  createStoreContext(userStore)
+  const auth = useStoreContext(authStore)
 </script>
 
 <div>

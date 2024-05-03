@@ -1,6 +1,6 @@
 const mediaQuery = '(prefers-color-scheme: dark)'
 
-export const theme = () => {
+export const themeStore = () => {
   let darkMode = $state(window.matchMedia(mediaQuery).matches)
 
   const handleColorSchemeChange = (event: MediaQueryListEvent) => {
@@ -18,8 +18,7 @@ export const theme = () => {
   })
 
   return {
-    get value() {
-      return darkMode ? 'dark' : 'light'
-    },
+    get isDarkMode() { return darkMode },
+    get isLightMode() { return !darkMode },
   }
 }

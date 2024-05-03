@@ -1,17 +1,17 @@
 <script lang='ts'>
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
-  import Page from '../page/Page.svelte'
-  import { user } from 'src/stores/user.svelte'
+  import { userStore } from 'src/stores/userStore.svelte'
   import Card from '../Card.svelte'
+  import Page from '../page/Page.svelte'
 
-  const _user = useStoreContext(user)
+  const user = useStoreContext(userStore)
 </script>
 
 <Page>
   <Card>
-    <img alt='' src={`https://ui-avatars.com/api/?format=svg&rounded=true&length=1&name=${_user.user?.username || _user.user?.email}`} />
-    <span class='bold'>{_user.user?.username ?? 'Tin man'}</span>
-    <span>{_user.user?.email}</span>
+    <img alt='' src={`https://ui-avatars.com/api/?format=svg&rounded=true&length=1&name=${user.username || user.email}`} />
+    <span class:bold={user.username}>{user.username ?? ''}</span>
+    <span>{user.email}</span>
   </Card>
 </Page>
 

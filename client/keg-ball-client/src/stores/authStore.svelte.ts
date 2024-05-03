@@ -2,7 +2,7 @@ import { createClient, type User } from '@supabase/supabase-js'
 
 type State = 'initial' | 'signingIn' | 'signedIn' | 'signingOut' | 'signedOut'
 
-export const authentication = () => {
+export const authStore = () => {
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
   const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
   const supabase = createClient(supabaseUrl, supabaseKey)
