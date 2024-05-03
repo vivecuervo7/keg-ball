@@ -1,4 +1,5 @@
 import { createClient, type User } from '@supabase/supabase-js'
+import { navigate } from 'svelte-routing'
 
 type State = 'initial' | 'signingIn' | 'signedIn' | 'signingOut' | 'signedOut'
 
@@ -47,6 +48,7 @@ export const authStore = () => {
   const signOut: () => void = async () => {
     state = 'signingOut'
     await supabase.auth.signOut()
+    navigate('/')
   }
 
   return {

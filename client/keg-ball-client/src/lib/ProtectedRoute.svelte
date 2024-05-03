@@ -14,7 +14,7 @@
 </script>
 
 <Route {path}>
-  {#if auth.signedIn}
+  {#if auth.signedIn || auth.state === 'signingOut'}
     {@render children()}
   {:else}
     <Unauthorized />

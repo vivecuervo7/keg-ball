@@ -13,7 +13,7 @@
     flex-direction: column;
     background-image: url('src/assets/background.svg');
     background-repeat: repeat-x;
-    padding: 4rem 2rem 0.5rem;
+    padding: 5rem 2rem 0.5rem;
     overflow-y: auto;
 
     @media (--dark-mode) {
