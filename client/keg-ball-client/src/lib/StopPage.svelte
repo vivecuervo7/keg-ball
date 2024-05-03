@@ -33,6 +33,7 @@
     place-content: center;
     margin: auto;
     max-width: min(75%, 700px);
+    height: 100%;
 
     @media (--small-viewport) {
       grid-template-rows: minmax(auto, 200px) 1fr;

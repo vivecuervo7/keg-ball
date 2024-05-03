@@ -18,12 +18,11 @@
 <button class='overlay' class:open onclick={() => open = false}></button>
 <nav class:open>
   <SiteNavigationLink to='/'>Home</SiteNavigationLink>
-  <SiteNavigationLink to='unauthorized'>Unauthorized</SiteNavigationLink>
-  <SiteNavigationLink to='forbidden'>Forbidden</SiteNavigationLink>
-  <SiteNavigationLink to='not-found'>Not Found</SiteNavigationLink>
-  {#if auth.state === 'signedIn'}
-    <SiteNavigationLink to='protected'>Protected (signed in)</SiteNavigationLink>
+
+  {#if auth.signedIn}
+    <SiteNavigationLink to='profile'>Profile</SiteNavigationLink>
   {/if}
+
   <button class='handle' class:open onclick={() => open = !open}>
     {#if open}
       <CloseIcon />

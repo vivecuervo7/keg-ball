@@ -1,20 +1,21 @@
 <script lang='ts'>
   import { Route } from 'svelte-routing'
   import ProtectedRoute from './ProtectedRoute.svelte'
-  import Page from './page/Page.svelte'
   import Forbidden from './routes/Forbidden.svelte'
   import NotFound from './routes/NotFound.svelte'
   import Unauthorized from './routes/Unauthorized.svelte'
+  import Profile from './routes/Profile.svelte'
+  import Home from './routes/Home.svelte'
 </script>
 
 <!-- Public routes -->
 <Route path='/'>
-  <Page>Home</Page>
+  <Home />
 </Route>
 
 <!-- Protected routes -->
-<ProtectedRoute path='/protected'>
-  <Page>Protected route</Page>
+<ProtectedRoute path='profile'>
+  <Profile />
 </ProtectedRoute>
 
 <!-- Error pages -->

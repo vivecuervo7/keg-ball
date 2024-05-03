@@ -4,13 +4,15 @@
   const { children }: PropsWithChildren = $props()
 </script>
 
-<div>
-  {@render children()}
+<div class='root'>
+  <div>
+    {@render children()}
+  </div>
   <PageFooter />
 </div>
 
 <style lang='postcss'>
-  div {
+  .root {
     display: grid;
     grid-template-rows: 1fr auto;
     height: 100%;

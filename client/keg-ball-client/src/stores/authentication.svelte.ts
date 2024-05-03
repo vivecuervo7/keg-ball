@@ -1,10 +1,6 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, type User } from '@supabase/supabase-js'
 
 type State = 'initial' | 'signingIn' | 'signedIn' | 'signingOut' | 'signedOut'
-
-interface User {
-  username: string
-}
 
 export const authentication = () => {
   const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
@@ -12,7 +8,7 @@ export const authentication = () => {
   const supabase = createClient(supabaseUrl, supabaseKey)
 
   let state: State = $state('initial')
-  let user: User | null = $state(null)
+  let user: User | undefined = $state(undefined)
 
   supabase.auth.onAuthStateChange(async (event, session) => {
     switch (event) {
@@ -22,14 +18,14 @@ export const authentication = () => {
 
       case 'SIGNED_IN':
         state = 'signedIn'
-        user = {
-          username: session?.user?.email || '',
+        if (JSON.stringify(user) !== JSON.stringify(session?.user)) {
+          user = session?.user
         }
         break
 
       case 'SIGNED_OUT':
         state = 'signedOut'
-        user = null
+        user = undefined
         break
     }
   })
@@ -55,6 +51,7 @@ export const authentication = () => {
 
   return {
     get state() { return state },
+    get signedIn() { return state === 'signedIn' },
     get isLoading() { return state === 'initial' || state === 'signingIn' || state === 'signingOut' },
     get user() { return user },
     signInWithGoogle,

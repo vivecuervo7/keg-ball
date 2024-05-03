@@ -7,8 +7,8 @@
 
   const showSignOutButton = $derived(auth.state === 'signingOut' || auth.state === 'signedIn')
   const showSignInButton = $derived(auth.state === 'signingIn' || auth.state === 'signedOut')
-  const signedInAsText = $derived(auth.state === 'signedIn'
-    ? `Signed in as: ${auth.user?.username}`
+  const signedInAsText = $derived(auth.signedIn
+    ? `Signed in as: ${auth.user?.email}`
     : 'Not signed in')
 </script>
 

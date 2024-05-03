@@ -5,9 +5,11 @@
   import SiteLoader from 'src/lib/layout/SiteLoader.svelte'
   import SiteNavigation from 'src/lib/layout/SiteNavigation.svelte'
   import { Router } from 'svelte-routing'
-  import { useStoreContext } from './hooks/useStoreContext.svelte'
+  import { createStoreContext, useStoreContext } from './hooks/useStoreContext.svelte'
   import { authentication } from './stores/authentication.svelte'
+  import { user } from './stores/user.svelte'
 
+  createStoreContext(user)
   const auth = useStoreContext(authentication)
 </script>
 

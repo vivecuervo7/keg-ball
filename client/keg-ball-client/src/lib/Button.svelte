@@ -28,5 +28,6 @@
 <style lang='postcss'>
   button, div {
     @mixin button;
+    text-align: center;
   }
 </style>
