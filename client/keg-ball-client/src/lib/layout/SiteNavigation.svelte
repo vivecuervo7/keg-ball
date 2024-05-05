@@ -44,7 +44,7 @@
     display: none;
   }
 
-  @media (--medium-viewport) {
+  @media (--small-viewport) {
     nav {
       position: absolute;
       top: 0;
