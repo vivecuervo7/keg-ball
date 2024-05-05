@@ -37,3 +37,22 @@
   visibility: visible;
   opacity: 1;
 }
+
+@define-mixin nav-link {
+  @mixin heavy-font;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  transition: color 0.15s;
+  width: fit-content;
+  color: var(--color-nav-link);
+  font-size: 1.5rem;
+
+  &.active {
+    color: var(--color-nav-link-active);
+  }
+
+  &:hover {
+    color: var(--color-nav-link-hover);
+  }
+}

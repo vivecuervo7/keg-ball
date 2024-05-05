@@ -16,17 +16,6 @@
 
 <style lang='postcss'>
   span {
-    @mixin heavy-font;
-    transition: color 0.15s;
-    color: var(--color-nav-link);
-    font-size: 1.5rem;
-
-    &.active {
-      color: var(--color-nav-link-active);
-    }
-
-    &:hover {
-      color: var(--color-nav-link-hover);
-    }
+    @mixin nav-link;
   }
 </style>

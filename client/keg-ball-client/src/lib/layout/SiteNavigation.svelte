@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { useOpenCloseState } from 'src/hooks/useOpenCloseState.svelte'
   import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
   import SiteNavigationLink from 'src/lib/layout/SiteNavigationLink.svelte'
   import { authStore } from 'src/stores/authStore.svelte'
@@ -6,17 +7,29 @@
   import CloseIcon from '../icons/CloseIcon.svelte'
   import MenuIcon from '../icons/MenuIcon.svelte'
 
+  const routes: Record<string, string> = {
+    '/': 'Home',
+    '/clubs': 'Clubs',
+    '/profile': 'Profile',
+  }
+
   const auth = useStoreContext(authStore)
-  let open = $state(false)
+  const location = useLocation()
+
+  let sidebar = useOpenCloseState()
+  let activeLink = $derived(routes[$location.pathname])
 
   $effect (() => {
-    const location = useLocation()
-    location.subscribe(() => open = false)
+    location.subscribe(sidebar.close)
   })
 </script>
 
-<button class='overlay' class:open onclick={() => open = false}></button>
-<nav class:open>
+<button class='sidebar-open' onclick={sidebar.open}>
+  <MenuIcon />
+  <span>{activeLink}</span>
+</button>
+<button class='overlay' class:open={sidebar.isOpen} onclick={sidebar.close}></button>
+<nav class:open={sidebar.isOpen}>
   <SiteNavigationLink to='/'>Home</SiteNavigationLink>
   <SiteNavigationLink to='clubs'>Clubs</SiteNavigationLink>
 
@@ -24,12 +37,8 @@
     <SiteNavigationLink to='profile'>Profile</SiteNavigationLink>
   {/if}
 
-  <button class='handle' class:open onclick={() => open = !open}>
-    {#if open}
-      <CloseIcon />
-    {:else}
-      <MenuIcon />
-    {/if}
+  <button class='handle' class:open onclick={sidebar.close}>
+    <CloseIcon />
   </button>
 </nav>
 
@@ -40,17 +49,23 @@
     gap: 1rem;
   }
 
-  .overlay, .handle {
+  .overlay, .handle, .sidebar-open {
     display: none;
   }
 
   @media (--small-viewport) {
+    .sidebar-open {
+      @mixin nav-link;
+      color: var(--color-nav-link-active);
+    }
+
     nav {
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       flex-direction: column;
+      align-items: start;
       transform: translateX(-100%);
       transition: transform 0.3s ease-in-out;
       background-color: var(--color-keyline);
@@ -76,16 +91,10 @@
     .handle {
       @mixin button;
       position: absolute;
-      top: 120px;
+      top: 0;
       right: 0;
-      transform: translateX(100%);
-      border-radius: 0 12px 12px 0;
-      background-color: var(--color-keyline);
-      padding: 1rem 0.5rem;
-
-      &.open {
-        background-color: var(--color-keyline);
-      }
+      margin: 0.5rem;
+      padding: 1rem;
     }
   }
 </style>
