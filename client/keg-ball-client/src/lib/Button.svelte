@@ -3,18 +3,29 @@
 
   interface ButtonProps {
     onclick: () => void
+    type?: 'button'
+  }
+
+  interface SubmitButtonProps {
+    onclick?: undefined
+    type: 'submit'
   }
 
   interface LinkProps {
     onclick?: undefined
+    type: 'link'
     to: string
   }
 
-  let { ...props }: PropsWithChildren<ButtonProps | LinkProps> = $props()
+  let { ...props }: PropsWithChildren<ButtonProps | SubmitButtonProps | LinkProps> = $props()
 </script>
 
-{#if props.onclick}
-  <button onclick={props.onclick}>
+{#if props.type === 'button' || props.onclick}
+  <button onclick={props.onclick} type={props.type}>
+    {@render props.children()}
+  </button>
+{:else if props.type === 'submit'}
+  <button type={props.type}>
     {@render props.children()}
   </button>
 {:else}

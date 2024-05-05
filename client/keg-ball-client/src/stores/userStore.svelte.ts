@@ -1,32 +1,27 @@
 import { useStoreContext } from 'src/hooks/useStoreContext.svelte'
 import { authStore } from './authStore.svelte'
-
-interface Profile {
-  id: string
-  email: string
-  username: string
-}
+import type { User } from 'src/models'
 
 export const userStore = () => {
-  let profile: Profile | null = $state(null)
+  let user: User | null = $state(null)
 
   const auth = useStoreContext(authStore)
 
   $effect(() => {
     if (auth.user) {
-      loadUserProfile(auth.user.id)
+      loadUser(auth.user.id)
     }
     else {
-      profile = null
+      user = null
     }
   })
 
-  const loadUserProfile = async (id: string) => {
+  const loadUser = async (id: string) => {
     const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/users/${id}`)
 
     if (response.ok) {
       const json = await response.json()
-      profile = json
+      user = json
       return
     }
     else {
@@ -42,13 +37,13 @@ export const userStore = () => {
       body: JSON.stringify({ id, email, username }),
     })
 
-    profile = { id, email, username }
+    user = { id, email, username }
   }
 
   return {
-    get profile() { return profile },
-    get username() { return profile?.username || '' },
-    get email() { return profile?.email || '' },
-    get setupCompleted() { return !!profile },
+    get user() { return user },
+    get username() { return user?.username || '' },
+    get email() { return user?.email || '' },
+    get setupCompleted() { return !!user },
   }
 }

@@ -4,6 +4,100 @@
       "id": "1",
       "username": "Test User",
       "email": "test-user@example.com"
+    },
+    {
+      "id": "058b8b3e-4cad-4ad8-8d80-3cad132f1721",
+      "email": "vivecuervo7@gmail.com",
+      "username": "vivecuervo7"
+    }
+  ],
+  "clubs": [
+    {
+      "id": "1",
+      "name": "Napoleons",
+      "code": "1234",
+      "ownerId": "1",
+      "members": ["1", "2"],
+      "players": [
+        {
+          "id": "1",
+          "name": "Test Player 1"
+        },
+        {
+          "id": "2",
+          "name": "Test Player 2"
+        },
+        {
+          "id": "3",
+          "name": "Test Player 3"
+        },
+        {
+          "id": "4",
+          "name": "Test Player 4"
+        },
+        {
+          "id": "5",
+          "name": "Test Player 5"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Ashgrove",
+      "code": "1234",
+      "ownerId": "1",
+      "members": ["1"],
+      "players": [
+        {
+          "id": "6",
+          "name": "Test Player 6"
+        },
+        {
+          "id": "7",
+          "name": "Test Player 7"
+        },
+        {
+          "id": "8",
+          "name": "Test Player 8"
+        },
+        {
+          "id": "9",
+          "name": "Test Player 9"
+        },
+        {
+          "id": "10",
+          "name": "Test Player 10"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Test Club 3",
+      "code": null,
+      "ownerId": "1",
+      "members": ["1"],
+      "players": [
+        {
+          "id": "11",
+          "name": "Test Player 11"
+        },
+        {
+          "id": "12",
+          "name": "Test Player 12"
+        },
+        {
+          "id": "13",
+          "name": "Test Player 13"
+        },
+        {
+          "id": "14",
+          "name": "Test Player 14"
+        },
+        {
+          "id": "15",
+          "name": "Test Player 15"
+        }
+      ]
     }
   ]
 }

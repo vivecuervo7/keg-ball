@@ -22,7 +22,7 @@
 
     @media (--small-viewport) {
       background-size: 500px;
-      padding: 2.5rem 1rem 0.5rem;
+      padding: 3.5rem 1rem 0.5rem;
     }
   }
 </style>

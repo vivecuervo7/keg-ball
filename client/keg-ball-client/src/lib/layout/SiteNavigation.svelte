@@ -18,6 +18,7 @@
 <button class='overlay' class:open onclick={() => open = false}></button>
 <nav class:open>
   <SiteNavigationLink to='/'>Home</SiteNavigationLink>
+  <SiteNavigationLink to='clubs'>Clubs</SiteNavigationLink>
 
   {#if auth.signedIn}
     <SiteNavigationLink to='profile'>Profile</SiteNavigationLink>

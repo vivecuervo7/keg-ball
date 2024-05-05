@@ -9,7 +9,7 @@
     <h1>Clubs</h1>
     <span>You haven't joined any clubs yet</span>
     <div>
-      <Button onclick={() => window.alert('Not implemented')}>Search for an existing club</Button>
+      <Button to='clubs#search' type='link'>Search for an existing club</Button>
       <span>or</span>
       <Button onclick={() => window.alert('Not implemented')}>Create a new club</Button>
     </div>
@@ -18,17 +18,10 @@
 
 <style lang='postcss'>
   div {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 0.5rem;
-    place-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
     align-items: center;
-    margin-top: 0.5rem;
-
-    @media (--small-viewport) {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
+    margin-top: 1rem;
   }
   </style>

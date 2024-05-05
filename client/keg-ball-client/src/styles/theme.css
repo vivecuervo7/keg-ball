@@ -13,4 +13,5 @@
   --color-nav-link-active: light-dark(var(--color-secondary), #439cf0);
   --color-nav-link-hover: #71bafe;
   --color-card-background: light-dark(#f0f0f0, #202026);
+  --color-input-border: light-dark(#ceced4, #3d404d);
 }
