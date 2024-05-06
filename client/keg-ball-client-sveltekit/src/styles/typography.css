@@ -2,7 +2,9 @@ html {
   font-size: 16px;
 }
 
-body {
+body,
+input,
+button {
   line-height: 1.3;
   font-family:
     'Red Hat Display Variable',

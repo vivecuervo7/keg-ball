@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #082c50;
+  --color-secondary: #439cf0;
+  --color-tertiary: #71bafe;
+  --color-keyline: #dedee4;
+  --main-background: #fafafa;
+  --card-background: #f2f2f3;
+  --button-background: #dedee4;
+  --button-background-hover: #d0d0d8;
+}
+
+:root {
+  --shadow-light: rgba(0, 0, 0, 0.15);
+  --shadow-medium: rgba(0, 0, 0, 0.25);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}

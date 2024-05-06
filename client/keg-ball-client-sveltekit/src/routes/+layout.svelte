@@ -1,7 +1,9 @@
 <script lang="ts">
-  import '../app.css'
-  import '@fontsource/bakbak-one'
   import '@fontsource-variable/red-hat-display'
+  import '@fontsource/bakbak-one'
+  import '../app.css'
+  import LoadingOverlay from './LoadingOverlay.svelte'
+  import NavLink from './NavLink.svelte'
 </script>
 
 <header>
@@ -13,12 +15,13 @@
 </header>
 <main>
   <nav>
-    <a href="/">Home</a>
-    <a href="/clubs">Clubs</a>
-    <a href="/profile">Profile</a>
+    <NavLink href="/">Home</NavLink>
+    <NavLink href="/clubs">Clubs</NavLink>
+    <NavLink href="/profile">Profile</NavLink>
   </nav>
   <slot />
 </main>
+<LoadingOverlay />
 
 <style lang="postcss">
   header {
@@ -27,6 +30,7 @@
     gap: 1rem;
     align-items: center;
     padding: 1rem;
+    box-shadow: 0 0 8px var(--shadow-medium);
 
     img {
       @mixin responsive height, 5rem, 4rem, 3rem;
@@ -60,10 +64,15 @@
 
   main {
     @mixin responsive background-size, 700px, 650px, 600px;
-    @mixin responsive padding-top, 4rem, 3.5rem, 3rem;
+    @mixin responsive padding, 5rem 1rem 1rem, 4.5rem 1rem 1rem, 4rem 1rem 1rem;
     display: grid;
     grid-template-rows: auto 1fr;
     background-image: url('src/assets/background.svg');
     background-repeat: repeat-x;
+  }
+
+  nav {
+    display: flex;
+    gap: 1em;
   }
 </style>

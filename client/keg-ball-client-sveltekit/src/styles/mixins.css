@@ -4,6 +4,24 @@
   font-weight: 700;
 }
 
+@define-mixin overlay {
+  transition:
+    visibility 0.3s 0s,
+    opacity 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+
+  @media (--dark-mode) {
+    background-color: rgbs(30, 30, 30, 0.75);
+  }
+}
+
+@define-mixin overlay-open {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Provides a shorter way to declare multiple breakpoint sizes in a single line */
 /* e.g. '@mixin font-size 4rem, 3.5rem, 3rem;' */
 /* Omitting one of the breakpoint sizes will default to the previous size */

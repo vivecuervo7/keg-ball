@@ -1,0 +1,8 @@
+:root {
+  --short-transition: 0.15s;
+  --medium-transition: 0.3s;
+}
+
+:root {
+  --border-radius: 24px;
+}
