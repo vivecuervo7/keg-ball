@@ -48,10 +48,6 @@
   color: var(--color-nav-link);
   font-size: 1.5rem;
 
-  &.active {
-    color: var(--color-nav-link-active);
-  }
-
   &:hover {
     color: var(--color-nav-link-hover);
   }

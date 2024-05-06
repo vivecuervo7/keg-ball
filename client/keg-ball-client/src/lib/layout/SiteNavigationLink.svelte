@@ -17,5 +17,9 @@
 <style lang='postcss'>
   span {
     @mixin nav-link;
+
+    &.active {
+      color: var(--color-nav-link-active);
+    }
   }
 </style>

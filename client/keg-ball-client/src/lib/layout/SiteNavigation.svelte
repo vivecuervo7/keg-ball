@@ -32,11 +32,9 @@
 <nav class:open={sidebar.isOpen}>
   <SiteNavigationLink to='/'>Home</SiteNavigationLink>
   <SiteNavigationLink to='clubs'>Clubs</SiteNavigationLink>
-
   {#if auth.signedIn}
     <SiteNavigationLink to='profile'>Profile</SiteNavigationLink>
   {/if}
-
   <button class='handle' class:open onclick={sidebar.close}>
     <CloseIcon />
   </button>
@@ -54,11 +52,6 @@
   }
 
   @media (--small-viewport) {
-    .sidebar-open {
-      @mixin nav-link;
-      color: var(--color-nav-link-active);
-    }
-
     nav {
       position: absolute;
       top: 0;
@@ -75,6 +68,11 @@
       &.open {
         transform: translateX(0);
       }
+    }
+
+    .sidebar-open {
+      @mixin nav-link;
+      color: var(--color-nav-link-active);
     }
 
     .overlay {
