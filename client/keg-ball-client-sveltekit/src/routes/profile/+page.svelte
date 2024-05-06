@@ -11,10 +11,3 @@
   <header>Username</header>
   <span>email@example.com</span>
 </Card>
-
-<style lang="postcss">
-  img {
-    margin-bottom: 0.5rem;
-    max-width: 200px;
-  }
-</style>

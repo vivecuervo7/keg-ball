@@ -4,28 +4,15 @@
   import { page } from '$app/stores'
   import { goto } from '$app/navigation'
 
-  interface Club {
-    id: string
-    name: string
-    members: string[]
-  }
+  const { data } = $props()
 
-  let value = $state('')
-  let clubs: Club[] = $state([])
+  let search = $state($page.url.searchParams.get('search') ?? '')
 
   const onsubmit = async (event: SubmitEvent) => {
     event.preventDefault()
-    $page.url.searchParams.set('search', value)
-    goto(`?${$page.url.searchParams.toString()}`, { replaceState: true, keepFocus: true })
+    $page.url.searchParams.set('search', search)
+    goto(`?${$page.url.searchParams.toString()}`, { replaceState: true, keepFocus: true, invalidateAll: true })
   }
-
-  page.subscribe(async (page) => {
-    if (page.url.searchParams.has('search')) {
-      const search = page.url.searchParams.get('search')
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/clubs?name_like=${search}`)
-      clubs = await response.json()
-    }
-  })
 </script>
 
 <svelte:head>
@@ -34,7 +21,7 @@
 
 <Card>
   <form {onsubmit}>
-    <input type="text" placeholder="Search for clubs" bind:value />
+    <input type="text" placeholder="Search for clubs" bind:value={search} />
     <div>
       <div>
         <Button>Create a club</Button>
@@ -54,7 +41,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each clubs as { id, name, members }}
+      {#each data.clubs as { id, name, members }}
         <tr>
           <td>{name}</td>
           <td>{members.length}</td>
@@ -65,7 +52,7 @@
       {/each}
     </tbody>
   </table>
-  {#if clubs.length === 0}
+  {#if data.clubs.length === 0}
     <span class="empty"> No results </span>
   {/if}
 </Card>
