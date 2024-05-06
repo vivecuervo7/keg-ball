@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Clubs - Keg Ball</title>
+  <title>Clubs - Keg Ball</title>
 </svelte:head>
 
 <div>Clubs</div>

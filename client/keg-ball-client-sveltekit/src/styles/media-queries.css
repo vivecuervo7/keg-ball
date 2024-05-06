@@ -1,0 +1,8 @@
+/* Breakpoints */
+@custom-media --small-viewport (max-width: 767px);
+@custom-media --medium-viewport (max-width: 1200px);
+@custom-media --large-viewport (min-width: 1201px);
+
+/* Dark / light mode */
+@custom-media --dark-mode (prefers-color-scheme: dark);
+@custom-media --light-mode (prefers-color-scheme: light);
