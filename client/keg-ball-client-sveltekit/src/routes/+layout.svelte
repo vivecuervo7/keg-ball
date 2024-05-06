@@ -1,12 +1,15 @@
 <script lang="ts">
-  import '../styles/typography.css'
+  import '../app.css'
   import '@fontsource/bakbak-one'
   import '@fontsource-variable/red-hat-display'
 </script>
 
 <header>
-  <span>Keg Ball</span>
-  <span>Fantasy Club Cricket</span>
+  <img src="src/assets/logo.svg" alt="Keg Ball" />
+  <div>
+    <span>Keg Ball</span>
+    <span>Fantasy Club Cricket</span>
+  </div>
 </header>
 <main>
   <nav>
@@ -20,24 +23,37 @@
 <style lang="postcss">
   header {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
 
-    span {
-      @mixin heavy-font;
-      text-transform: uppercase;
-      letter-spacing: 0.2rem;
+    img {
+      @mixin responsive height, 5rem, 4rem, 3rem;
+      margin: auto;
+    }
 
-      &:first-child {
-        @mixin responsive font-size, 3.5rem, 3rem, 2.5rem;
+    div {
+      display: inline-grid;
+      grid-template-rows: auto auto;
+
+      span {
+        @mixin heavy-font;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
         line-height: 1em;
-        color: var(--color-primary);
-        font-weight: 900;
-      }
 
-      &:last-child {
-        @mixin responsive font-size, 2rem, 1.75rem, 1.5rem;
-        color: var(--color-secondary);
-        font-weight: 500;
+        &:first-child {
+          @mixin responsive font-size, 3.5rem, 3rem, 2.5rem;
+          color: var(--color-primary);
+          font-weight: 900;
+        }
+
+        &:last-child {
+          @mixin responsive font-size, 2rem, 1.5rem, 1.25rem;
+          color: var(--color-secondary);
+          font-weight: 500;
+        }
       }
     }
   }
