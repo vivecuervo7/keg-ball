@@ -16,16 +16,16 @@
   let { ...props }: PropsWithChildren<ButtonProps | SubmitButtonProps | LinkProps> = $props()
 </script>
 
-{#if props.href}
+{#if props.type === 'link'}
   <a href={props.href}>
     {@render props.children()}
   </a>
 {:else if props.type === 'submit'}
-  <button type={props.type}>
+  <button type="submit">
     {@render props.children()}
   </button>
 {:else}
-  <button onclick={props.onclick}>
+  <button type="button" onclick={props.onclick}>
     {@render props.children()}
   </button>
 {/if}

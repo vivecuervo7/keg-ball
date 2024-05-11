@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Card from '$lib/Card.svelte'
 
   const { data } = $props()

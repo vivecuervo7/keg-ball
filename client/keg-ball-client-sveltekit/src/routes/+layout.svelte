@@ -7,7 +7,7 @@
 </script>
 
 <header>
-  <img src="src/assets/logo.svg" alt="Keg Ball" />
+  <img src="/src/assets/logo.svg" alt="Keg Ball" />
   <div>
     <span>Keg Ball</span>
     <span>Fantasy Club Cricket</span>
@@ -19,7 +19,9 @@
     <NavLink href="/clubs">Clubs</NavLink>
     <NavLink href="/profile">Profile</NavLink>
   </nav>
-  <slot />
+  <div>
+    <slot />
+  </div>
 </main>
 <LoadingOverlay />
 
@@ -67,8 +69,16 @@
     @mixin responsive padding, 5rem 1rem 1rem, 4.5rem 1rem 1rem, 4rem 1rem 1rem;
     display: grid;
     grid-template-rows: auto 1fr;
-    background-image: url('src/assets/background.svg');
+    grid-template-columns: 1fr;
+    background-image: url('/src/assets/background.svg');
     background-repeat: repeat-x;
+
+    > div,
+    > nav {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
   }
 
   nav {

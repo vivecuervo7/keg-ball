@@ -24,8 +24,8 @@
     <input type="text" placeholder="Search for clubs" bind:value={search} />
     <div>
       <div>
-        <Button>Create a club</Button>
-        <Button>Join by code</Button>
+        <Button onclick={() => {}}>Create a club</Button>
+        <Button onclick={() => {}}>Join by code</Button>
       </div>
       <Button type="submit">Search</Button>
     </div>
@@ -36,17 +36,14 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Members</th>
-        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       {#each data.clubs as { id, name, members }}
         <tr>
           <td>{name}</td>
-          <td>{members.length}</td>
           <td>
-            <Button href={`/clubs/${id}`}>View</Button>
+            <Button type="link" href={`/clubs/${id}`}>View</Button>
           </td>
         </tr>
       {/each}
@@ -89,6 +86,11 @@
       &:first-child {
         width: 70%;
       }
+    }
+
+    td:last-child {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 </style>

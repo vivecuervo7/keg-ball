@@ -10,11 +10,11 @@
 <Card>
   <header>Clubs</header>
   <span>You haven't joined any clubs yet</span>
-  <Button href="/clubs">Find your club</Button>
+  <Button type="link" href="/clubs">Find your club</Button>
 </Card>
 
 <Card>
   <header>Profile</header>
   <span>Give yourself a nickname and an avatar</span>
-  <Button href="/profile">Edit your profile</Button>
+  <Button type="link" href="/profile">Edit your profile</Button>
 </Card>

@@ -8,6 +8,12 @@ declare global {
     // interface PageState {}
     // interface Platform {}
   }
+
+  declare type PropsWithChildren<Props = { children: Snippet }> = Props &
+    (Props extends { children: Snippet } ? Props : { children: Snippet })
+
+  declare type PropsWithOptionalChildren<Props = { children?: Snippet }> = Props &
+    (Props extends { children?: Snippet } ? Props : { children?: Snippet })
 }
 
 export {}

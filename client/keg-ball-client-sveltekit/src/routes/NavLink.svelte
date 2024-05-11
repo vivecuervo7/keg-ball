@@ -13,17 +13,6 @@
 
 <style lang="postcss">
   a {
-    @mixin heavy-font;
-    @mixin responsive font-size, 1.5rem, 1.35rem, 1.2rem;
-    color: var(--color-primary);
-    transition: color var(--short-transition);
-
-    &.active {
-      color: var(--color-secondary);
-    }
-
-    &:hover {
-      color: var(--color-tertiary);
-    }
+    @mixin nav-link;
   }
 </style>
