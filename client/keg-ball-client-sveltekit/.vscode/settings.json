@@ -4,7 +4,7 @@
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.svelte": "${capture}.ts, ${capture}.css",
+    "*.svelte": "${capture}.ts, ${capture}.server.*, ${capture}.css",
     "*.env": ".env.*",
     "tsconfig.json": "tsconfig.*.json",
     "app.html": "app.css, app.d.ts",

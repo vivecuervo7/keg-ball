@@ -11,14 +11,14 @@ interface Props {
   user: User
 }
 
-let data = $state(structuredClone(user))
+let data = $state(structuredClone($state.snapshot(user)))
 
 const handleSubmit = () => {
   onsubmit($state.snapshot(data))
 }
 
 const close = () => {
-  data = structuredClone(user)
+  data = structuredClone($state.snapshot(user))
   oncancel()
 }
 </script>
@@ -31,7 +31,7 @@ form {
 </style>
 
 <Modal title="Edit Profile" {open} ondone={handleSubmit} oncancel={close}>
-  <form onsubmit={handleSubmit}>
+  <form method="dialog">
     <TextInput label="Username" bind:value={data.username} />
     <TextInput label="Email Address" bind:value={data.email} />
     <TextInput label="Image URL" bind:value={data.imageUrl} />

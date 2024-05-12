@@ -2,8 +2,9 @@
   "users": [
     {
       "id": "1",
-      "username": "Test User",
-      "email": "test-user@example.com"
+      "username": "Test User 4",
+      "email": "test-user@example.com",
+      "imageUrl": "https://ui-avatars.com/api/?format=svg&rounded=true&length=1&name=user"
     },
     {
       "id": "058b8b3e-4cad-4ad8-8d80-3cad132f1721",
@@ -17,7 +18,10 @@
       "name": "Napoleons",
       "code": "1234",
       "ownerId": "1",
-      "members": ["1", "2"],
+      "members": [
+        "1",
+        "2"
+      ],
       "players": [
         {
           "id": "1",
@@ -46,7 +50,9 @@
       "name": "Ashgrove",
       "code": "1234",
       "ownerId": "1",
-      "members": ["1"],
+      "members": [
+        "1"
+      ],
       "players": [
         {
           "id": "6",
@@ -75,7 +81,9 @@
       "name": "Test Club 3",
       "code": null,
       "ownerId": "1",
-      "members": ["1"],
+      "members": [
+        "1"
+      ],
       "players": [
         {
           "id": "11",
