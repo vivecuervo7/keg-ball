@@ -9,10 +9,6 @@ import Card from '$lib/components/Card.svelte'
   <Button type="link" href="/clubs">Find your club</Button>
 </Card>
 
-<div class="bar">
-  <span class="foo">TEST</span>
-</div>
-
 <Card>
   <header>Profile</header>
   <span>Give yourself a nickname and an avatar</span>
