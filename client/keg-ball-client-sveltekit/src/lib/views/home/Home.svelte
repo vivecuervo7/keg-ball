@@ -18,7 +18,3 @@ import Card from '$lib/components/Card.svelte'
   <span>Give yourself a nickname and an avatar</span>
   <Button type="link" href="/profile">Edit your profile</Button>
 </Card>
-
-<style src="./Home.css">
-/* @import './Home.css'; */
-</style>
