@@ -1,0 +1,15 @@
+main {
+  @mixin responsive background-size, 700px, 650px, 600px;
+  @mixin responsive padding, 5rem 1rem 1rem, 4.5rem 1rem 1rem, 4rem 1rem 1rem;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  background-image: url('/src/assets/background.svg');
+  background-repeat: repeat-x;
+
+  > div {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+}

@@ -2,11 +2,10 @@
 import Card from '$lib/components/Card.svelte'
 import type { Club } from '../../../models'
 
+const { club }: Props = $props()
 interface Props {
   club: Club
 }
-
-const { club }: Props = $props()
 </script>
 
 <Card>

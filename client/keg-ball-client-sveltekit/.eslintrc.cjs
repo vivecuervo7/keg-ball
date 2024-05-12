@@ -23,4 +23,8 @@ module.exports = {
       },
     },
   ],
+  globals: {
+    PropsWithChildren: 'readonly',
+    PropsWithOptionalChildren: 'readonly',
+  },
 }

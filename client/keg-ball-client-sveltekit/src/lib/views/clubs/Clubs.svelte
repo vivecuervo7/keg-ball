@@ -1,15 +1,14 @@
 <script lang="ts">
 import { goto } from '$app/navigation'
 import { page } from '$app/stores'
-import Button from '$lib/components/Button.svelte'
-import Card from '$lib/components/Card.svelte'
 import type { Club } from '../../../models'
+import ClubSearchForm from './components/ClubSearchForm.svelte'
+import ClubSearchResults from './components/ClubSearchResults.svelte'
 
+const { clubs }: Props = $props()
 interface Props {
   clubs: Club[]
 }
-
-const { clubs }: Props = $props()
 
 let search = $state($page.url.searchParams.get('search') ?? '')
 
@@ -20,41 +19,5 @@ const onsubmit = async (event: SubmitEvent) => {
 }
 </script>
 
-<Card>
-  <form {onsubmit}>
-    <input type="text" placeholder="Search for clubs" bind:value={search} />
-    <div>
-      <div>
-        <Button onclick={() => {}}>Create a club</Button>
-        <Button onclick={() => {}}>Join by code</Button>
-      </div>
-      <Button type="submit">Search</Button>
-    </div>
-  </form>
-</Card>
-<Card>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      {#each clubs as { id, name, members }}
-        <tr>
-          <td>{name}</td>
-          <td>
-            <Button type="link" href={`/clubs/${id}`}>View</Button>
-          </td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
-  {#if clubs.length === 0}
-    <span class="empty"> No results </span>
-  {/if}
-</Card>
-
-<style lang="postcss">
-@import './Clubs.css';
-</style>
+<ClubSearchForm value={search} {onsubmit} />
+<ClubSearchResults {clubs} />

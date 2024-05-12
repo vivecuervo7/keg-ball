@@ -1,8 +1,13 @@
 <script lang="ts">
-import Button from './Button.svelte'
-
-const { edit, children }: PropsWithChildren<{ edit?: () => void }> = $props()
+const { edit, children }: PropsWithChildren<Props> = $props()
+interface Props {
+  edit?: () => void
+}
 </script>
+
+<style lang="postcss">
+@import './Card.css';
+</style>
 
 <div class="root">
   {@render children()}
@@ -19,36 +24,3 @@ const { edit, children }: PropsWithChildren<{ edit?: () => void }> = $props()
     </div>
   {/if}
 </div>
-
-<style lang="postcss">
-.root {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  place-items: center center;
-  background-color: var(--card-background);
-  padding: 1.5rem;
-  border-radius: var(--border-radius);
-  max-width: 1200px;
-  width: 100%;
-  box-shadow: 4px 4px 8px var(--shadow-light);
-  margin: 2rem auto 0;
-
-  @mixin global header {
-    font-weight: bold;
-  }
-}
-
-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: var(--color-keyline);
-  transition: color var(--short-transition);
-
-  &:hover {
-    color: var(--color-secondary);
-  }
-}
-</style>

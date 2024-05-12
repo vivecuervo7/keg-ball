@@ -3,12 +3,15 @@ import Button from '$lib/components/Button.svelte'
 import Card from '$lib/components/Card.svelte'
 import type { Club } from '../../../../models'
 
+const { clubs }: Props = $props()
 interface Props {
   clubs: Club[]
 }
-
-const { clubs }: Props = $props()
 </script>
+
+<style lang="postcss">
+@import './ClubSearchResults.css';
+</style>
 
 <Card>
   <table>
@@ -32,7 +35,3 @@ const { clubs }: Props = $props()
     <span class="empty"> No results </span>
   {/if}
 </Card>
-
-<style lang="postcss" src="./SearchResultsCard.css">
-/* @import './SearchResultsCard.css'; */
-</style>
