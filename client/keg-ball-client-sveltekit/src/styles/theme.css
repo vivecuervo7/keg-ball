@@ -7,6 +7,8 @@
   --card-background: #f2f2f3;
   --button-background: #dedee4;
   --button-background-hover: #d0d0d8;
+  --button-danger-background: #f5d0d0;
+  --button-danger-background-hover: #ffc6c6;
 }
 
 :root {

@@ -1,0 +1,38 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+
+  input {
+    border-bottom: solid 1px var(--color-keyline);
+    padding: 0 0 0.25rem;
+    margin: 0 0.5rem;
+    caret-color: var(--color-secondary);
+  }
+
+  div {
+    @mixin responsive flex-direction, row, row, column-reverse;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+}
+
+table {
+  width: 100%;
+
+  th {
+    padding-bottom: 1rem;
+    text-align: left;
+
+    &:first-child {
+      width: 70%;
+    }
+  }
+
+  td:last-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.svelte": "${capture}.ts, ${capture}.css",
+    "*.env": ".env.*",
+    "tsconfig.json": "tsconfig.*.json",
+    "app.html": "app.css, app.d.ts",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, .gitignore, .eslintignore, .eslintrc.*, .prettierignore, .prettierrc, .npmrc, svelte.config.*, vite.config.*, postcss.config.*, tsconfig.json"
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.svelte-kit": true
+  }
+}

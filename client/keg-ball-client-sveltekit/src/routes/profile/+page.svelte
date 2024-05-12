@@ -1,13 +1,9 @@
 <script lang="ts">
-  import Card from '$lib/Card.svelte'
+import Profile from '$lib/views/profile/Profile.svelte'
 </script>
 
 <svelte:head>
   <title>Profile - Keg Ball</title>
 </svelte:head>
 
-<Card>
-  <img alt="" src={`https://ui-avatars.com/api/?format=svg&rounded=true&length=1&name=user`} />
-  <header>Username</header>
-  <span>email@example.com</span>
-</Card>
+<Profile />

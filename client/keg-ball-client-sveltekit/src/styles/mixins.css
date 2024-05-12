@@ -6,8 +6,8 @@
 
 @define-mixin overlay {
   transition:
-    visibility 0.3s 0s,
-    opacity 0.3s;
+    visibility var(--medium-transition) 0s,
+    opacity var(--medium-transition);
   visibility: hidden;
   opacity: 0;
   background-color: rgba(255, 255, 255, 0.75);
@@ -49,5 +49,14 @@
 
   @media (--small-viewport) {
     $(property): $small;
+  }
+}
+
+/* Provides a shorter way to declare a global selector, which is necessary for */
+/* passing styling to child components in Svelte */
+/* e.g. '@mixin global div { color: var(--color-primary); }' */
+@define-mixin global $selector {
+  :global($selector) {
+    @mixin-content;
   }
 }

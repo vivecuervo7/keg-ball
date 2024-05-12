@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+
+  th {
+    padding-bottom: 1rem;
+    text-align: left;
+
+    &:first-child {
+      width: 70%;
+    }
+  }
+
+  td:last-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

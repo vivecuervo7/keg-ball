@@ -1,0 +1,17 @@
+{
+  "Svelte + TypeScript script block": {
+    "prefix": ["s-ts, s-script"],
+    "body": ["<script lang='ts'>", "\t$0", "</script>"],
+    "description": "Svelte + TypeScript script block",
+  },
+  "Svelte + PostCSS style block": {
+    "prefix": ["s-postcss, s-style"],
+    "body": ["<style lang='postcss'>", "\t$0", "</style>"],
+    "description": "Svelte + PostCSS style block",
+  },
+  "Svelte + PostCSS + TypeScript component": {
+    "prefix": ["s-component"],
+    "body": ["<script lang='ts'>", "", "</script>", "", "$0", "", "<style lang='postcss'>", "", "</style>"],
+    "description": "Svelte + PostCSS + TypeScript component",
+  },
+}
