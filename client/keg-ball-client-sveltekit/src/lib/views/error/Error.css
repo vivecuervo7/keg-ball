@@ -2,7 +2,7 @@
   @mixin responsive grid-template-columns, 2fr 3fr, 2fr 3fr, 1fr;
   @mixin responsive grid-template-rows, 2fr 1fr, 1fr, minmax(auto, 300px) 1fr;
   @mixin responsive gap, 4rem, 3rem, 2rem;
-  @mixin responsive margin-top, 10rem auto 0, 10rem auto 0, 3rem auto 0;
+  @mixin responsive margin, 10rem auto 0, 10rem auto 0, 3rem auto 0;
   @mixin responsive text-align, left, left, center;
   display: grid;
   max-width: min(75%, 700px);
