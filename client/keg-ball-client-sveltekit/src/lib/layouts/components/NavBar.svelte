@@ -1,5 +1,5 @@
 <script lang="ts">
-import NavLink from './NavBar/NavLink.svelte'
+import NavLink from './NavLink.svelte'
 </script>
 
 <style lang="postcss">

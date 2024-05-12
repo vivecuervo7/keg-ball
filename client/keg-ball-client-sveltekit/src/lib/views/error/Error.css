@@ -1,0 +1,44 @@
+.root {
+  @mixin responsive grid-template-columns, 2fr 3fr, 2fr 3fr, 1fr;
+  @mixin responsive grid-template-rows, 2fr 1fr, 1fr, minmax(auto, 300px) 1fr;
+  @mixin responsive gap, 4rem, 3rem, 2rem;
+  @mixin responsive margin-top, 10rem auto 0, 10rem auto 0, 3rem auto 0;
+  @mixin responsive text-align, left, left, center;
+  display: grid;
+  max-width: min(75%, 700px);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: end;
+  }
+
+  @mixin global .button {
+    margin-top: 1rem;
+  }
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100%;
+}
+
+span {
+  display: block;
+  line-height: 1em;
+}
+
+.code,
+.title {
+  @mixin heavy-font;
+}
+
+.code {
+  @mixin responsive font-size, 6rem, 5rem, 4rem;
+}
+
+.title {
+  @mixin responsive font-size, 2.5rem, 2rem, 1.5rem;
+}

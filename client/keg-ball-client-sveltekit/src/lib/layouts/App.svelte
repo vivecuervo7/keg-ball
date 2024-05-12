@@ -2,9 +2,10 @@
 import '@fontsource-variable/red-hat-display'
 import '@fontsource/bakbak-one'
 import '../../app.css'
-import LoadingOverlay from '$lib/components/LoadingOverlay.svelte'
-import NavBar from '$lib/components/NavBar/NavBar.svelte'
-import SiteHeader from '$lib/components/SiteHeader.svelte'
+import LoadingOverlay from './components/LoadingOverlay.svelte'
+import NavBar from './components/NavBar.svelte'
+import SiteHeader from './components/SiteHeader.svelte'
+import Container from '$lib/components/Container.svelte'
 
 let { children }: PropsWithChildren = $props()
 </script>
@@ -13,11 +14,19 @@ let { children }: PropsWithChildren = $props()
 @import './App.css';
 </style>
 
-<SiteHeader />
-<main>
-  <div>
-    <NavBar />
-    {@render children()}
-  </div>
-</main>
+<div class="root">
+  <SiteHeader />
+  <main>
+    <Container>
+      <NavBar />
+    </Container>
+    <div class="content">
+      <!-- <Container> -->
+      <div class="page">
+        {@render children()}
+      </div>
+      <!-- </Container> -->
+    </div>
+  </main>
+</div>
 <LoadingOverlay />

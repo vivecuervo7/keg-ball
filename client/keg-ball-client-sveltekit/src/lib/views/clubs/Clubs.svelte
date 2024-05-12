@@ -15,9 +15,10 @@ let search = $state($page.url.searchParams.get('search') ?? '')
 const onsubmit = async (event: SubmitEvent) => {
   event.preventDefault()
   $page.url.searchParams.set('search', search)
+  console.log('search', $page.url.searchParams.toString())
   goto(`?${$page.url.searchParams.toString()}`, { replaceState: true, keepFocus: true, invalidateAll: true })
 }
 </script>
 
-<ClubSearchForm value={search} {onsubmit} />
+<ClubSearchForm bind:value={search} {onsubmit} />
 <ClubSearchResults {clubs} />
